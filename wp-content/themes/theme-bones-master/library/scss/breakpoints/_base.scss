@@ -157,7 +157,11 @@ HEADER STYLES
 }
 
 	#logo {
-		margin: 0.75em 0;
+		margin: 17px 0;
+		display: block;
+		img{
+			max-width: 47px;
+		}
 
 		a {
 			color: $white;
