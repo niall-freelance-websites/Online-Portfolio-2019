@@ -24,18 +24,19 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 
-%btn {
+%btn, button, a.wp-block-button__link{
+  @include accent-gradient;
   display: inline-block;
   position: relative;
   font-family: $sans-serif;
   text-decoration: none;
+  text-transform: uppercase;
   color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
-  font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
+  font-size: 0.8em;
+  line-height: normal;
+  font-weight: 700;
+  padding: 10px 20px 9px;
+  border-radius: 2px;
   border: 0;
   cursor: pointer;
   @include transition(background-color 0.14s ease-in-out);
@@ -53,6 +54,27 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   } // end active
 
 } // end .button
+
+
+.arrowLink, a.arrowLink, .readMore, a.readMore{
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  display: table;
+  color: $text-color;
+  text-decoration: none;
+  position: relative;
+  &:before{
+    content:'';
+    display: block;
+    position: absolute;
+    background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/theme-bones-master/library/images/buttonArrow.svg);
+    width: 30px;
+    height: 13px;
+    right: -40px;
+    top: 5px;
+  }
+}
 
 /*
 An example button.

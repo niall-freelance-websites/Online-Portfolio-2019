@@ -2,6 +2,15 @@
 
 				<div id="inner-footer" class="wrap cf">
 
+					<div class="footerlinks">
+						<?php $my_postid = 79;//This is page id or post id
+						$content_post = get_post($my_postid);
+						$content = $content_post->post_content;
+						$content = apply_filters('the_content', $content);
+						$content = str_replace(']]>', ']]&gt;', $content);
+						echo $content;?>
+					</div>
+
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)

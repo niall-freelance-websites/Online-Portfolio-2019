@@ -70,4 +70,13 @@ probably best not to use it. I mean, were you going to anyway? */
 	box-sizing:         $type;
 }
 
+@mixin accent-gradient{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fd6969+0,f95151+100 */
+	background: #fd6969; /* Old browsers */
+	background: -moz-linear-gradient(left, #fd6969 0%, #f95151 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #fd6969 0%,#f95151 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #fd6969 0%,#f95151 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd6969', endColorstr='#f95151',GradientType=1 ); /* IE6-9 */
+}
+
 

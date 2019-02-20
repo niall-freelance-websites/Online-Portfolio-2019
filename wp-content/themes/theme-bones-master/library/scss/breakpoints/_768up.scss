@@ -24,14 +24,20 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	width: 100%;
+}
+
+.absolute-top-banner{
+	margin-top: -135px;
 }
 
 /*********************
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	background: transparent;
+}
 
 	#logo {}
 
@@ -39,7 +45,12 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.mobileButton{
+	display: none;
+}
+
 .nav {
+	display: block;
 	border: 0;
 	ul {
 		background:$black;

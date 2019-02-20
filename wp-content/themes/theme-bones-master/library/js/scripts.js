@@ -13,6 +13,7 @@
 */
 
 
+
 /*
  * Get Viewport Dimensions
  * returns object with viewport dimensions to match css in width and height properties
@@ -105,10 +106,29 @@ function loadGravatars() {
 } // end function
 
 
+
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
+
+  
+      // Toggle navigation
+    $('#nav-toggle').click(function() {
+      this.classList.toggle("active");
+      // If sidebar is visible:
+      if ($('body').hasClass('show-nav')) {
+        // Hide sidebar
+        $('body').removeClass('show-nav');
+      } else { // If sidebar is hidden:
+        $('body').addClass('show-nav');
+        // Display sidebar
+      }
+    });
+  
+  // $(".mobileButton").click(function(){
+  //   $(".mainNav").toggleClass("open");
+  // });
 
   /*
    * Let's fire off the gravatar function
@@ -118,3 +138,4 @@ jQuery(document).ready(function($) {
 
 
 }); /* end of as page load scripts */
+

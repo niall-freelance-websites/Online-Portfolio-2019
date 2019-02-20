@@ -31,6 +31,10 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+		<link href="https://fonts.googleapis.com/css?family=Lora:400,400i|Poppins:600,600i,700" rel="stylesheet">
+
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
@@ -54,8 +58,13 @@
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
 
+					<!-- <a href="#" class="toggle-menu" id="nav-toggle">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/Hamburger.png"; ?>
+					</a> -->
 
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<a id="nav-toggle" href="#!" class="position"><span></span></a>
+
+					<nav class="mainNav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
