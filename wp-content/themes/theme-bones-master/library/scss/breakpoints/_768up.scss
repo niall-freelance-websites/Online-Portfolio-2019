@@ -19,6 +19,128 @@ GENERAL STYLES
 
 body {}
 
+.home{
+	p{
+		font-size: 17px;
+	}
+}
+
+.absolute-top-banner {
+	margin-top: -135px;
+}
+
+.entry-content .banner{
+	max-height: 520px;
+
+	.bannerContent {
+	    transform: translateY(-30%);
+	}
+}
+
+#logo img {
+     max-width: 53px; 
+}
+
+#logo {
+    margin: 15px 0 16px;
+}
+
+.header {
+	background: transparent;
+}
+
+#nav-toggle{
+	display: none;
+}
+
+.mainNav{
+	max-height: none;
+    min-width: 0;
+    transform: scale(1); 
+    float: right;
+    background-color: transparent;
+
+    li{
+    	float: left;
+    }
+}
+
+#header-widget-area{
+	display: inline-block;
+	float: left;
+    padding: 17px 0 0 0;
+}
+
+.bioText02{
+	&.wp-block-media-text{
+	padding: 80px 0 75px;
+		 p{
+			font-size: 19px;
+		}
+		h2{
+			margin-bottom: 0.5em;
+		}
+
+		img{
+			/*max-width: 140px;*/
+		}
+	}
+
+	.contact-btn a.wp-block-button__link{
+		margin-top: 25px;
+	}
+}
+
+.strong-view.simple div p{
+	font-size: 21px;
+}
+
+h2.testimonialHeader{
+    padding: 85px 0 0;
+}
+
+.strong-view.slider-container{
+	padding-bottom: 60px;
+}
+
+p.emailContact, p.phoneContact{
+	display: inline-block;
+}
+
+
+/*********************
+Project Pages
+*********************/
+
+.page-template-page-projects{
+	.entry-content .banner {
+	    h1{
+	    	font-size: 1.8em;
+	    }
+
+	    .bannerContent{
+            transform: translateY(0);
+        }
+	}
+}
+
+.projectContainer{
+	.projectInfo{
+		width: 38%;
+		float: right;
+		display: inline-block;
+	    padding: 0 1.5em 0 2em;
+	    position: -webkit-sticky;
+        position: sticky;
+        top: 30px;
+	}
+	img{
+		width: 62%;
+		/*float: left;*/
+		display: inline-block;
+	}
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -27,17 +149,9 @@ LAYOUT & GRID STYLES
 	width: 100%;
 }
 
-.absolute-top-banner{
-	margin-top: -135px;
-}
-
 /*********************
 HEADER STYLES
 *********************/
-
-.header {
-	background: transparent;
-}
 
 	#logo {}
 
@@ -50,14 +164,15 @@ NAVIGATION STYLES
 }
 
 .nav {
-	display: block;
+	display: inline-block;
+	float: left;
 	border: 0;
+    margin: 22px 15px 0 0;
 	ul {
 		background:$black;
 		margin-top:0;
 	}
 	li {
-		float: left;
 		position: relative;
 
 		a {
@@ -68,8 +183,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+
 			}
 		}
 
@@ -295,4 +409,19 @@ mobile. Make sure to double check these!
 		}
 	}
 } /* end .footer-links */
+
+.footerlinks{
+	float: right;
+}
+
+p.source-org{
+	float: left;
+}
+
+.footer{
+    padding: 2.5em 1.5em 2.5em;
+    p.emailContact{
+    	margin-right: 50px;
+    }
+}
 

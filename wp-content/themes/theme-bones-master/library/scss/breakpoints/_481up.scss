@@ -22,6 +22,18 @@ anymore, so just be aware that if you drop
 them in here, they won't work.
 */
 
+.entry-content .banner{
+	max-height: 405px;
+}
+
+.page-template-page-projects{
+	.entry-content .banner {
+	    h1{
+	    	font-size: 1.8em;
+	    }
+	}
+}
+
 
 /*********************
 NAVIGATION STYLES

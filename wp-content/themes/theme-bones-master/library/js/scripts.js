@@ -112,7 +112,7 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
-  
+
       // Toggle navigation
     $('#nav-toggle').click(function() {
       this.classList.toggle("active");
@@ -125,10 +125,22 @@ jQuery(document).ready(function($) {
         // Display sidebar
       }
     });
-  
-  // $(".mobileButton").click(function(){
-  //   $(".mainNav").toggleClass("open");
-  // });
+
+    // contact buttons
+    $('.contact-btn').click( function() {
+    $('body').addClass('show-contact');
+    } );
+
+    $('#nav-toggle-footer').click( function() {
+    $('body').removeClass('show-contact');
+    } );
+
+    $("wpforms-form-134").on('submit', function(){
+       $(".contact-btn" ).trigger("click");
+    })
+
+    $( "div.ProjectsNavigation" ).insertAfter( $( "p.viewWeb" ) );
+
 
   /*
    * Let's fire off the gravatar function

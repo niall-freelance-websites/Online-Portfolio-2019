@@ -9,3 +9,34 @@ on larger screens.
 
 ******************************************************************/
 
+.page-template-page-projects{
+	.header{
+		/*background: $primary;*/
+	}
+	.entry-content .banner {
+	    max-height: 443px;
+
+	    h1{
+	    	font-size: 2.6em;
+	    }
+	}
+}
+
+.entry-content .banner {
+    max-height: 730px;
+    /*max-height: 680px;*/
+
+    h1{
+    	font-size: 4.3em;
+    }
+}
+
+h2.home-intro{
+	font-size: 1.6em;
+	max-width: 1020px;
+}
+
+.introWidth p.home-intro{
+	font-size: 1.3em;
+	max-width: 1020px;
+}

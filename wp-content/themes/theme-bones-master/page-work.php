@@ -62,25 +62,29 @@
 									?>
 								
 
-								<div class="Work-section work-section-page">
+								<div class="WorkSection work-section-page">
 								<?php
 								$child_pages = $wpdb->get_results("SELECT *    FROM $wpdb->posts WHERE post_parent = ".$post->ID."    AND post_type = 'page' ORDER BY menu_order", 'OBJECT');    ?>
 								<?php if ( $child_pages ) : foreach ( $child_pages as $pageChild ) : setup_postdata( $pageChild ); ?>
-
+								
+								<div class="workContainer">
 								<div class="insert-page">
 									
 									<div class="workThumbnail">
 									  <a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>"><?php echo get_the_post_thumbnail($pageChild->ID, 'thumbnail'); ?></a>	 
 									</div>
-									
-									<h3 class="workTitle"><a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>"><?php echo $pageChild->post_title; ?></a></h3>
-									<div class="childExcerpt"><p><?php
-										if ($pageChild->post_excerpt){
-									      echo $pageChild->post_excerpt;
-									    }
-									?></p></div>
-									<a class="readMore" href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">Read more</a>
+									<div class="workContent">
+										<h3 class="workTitle"><a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>"><?php echo $pageChild->post_title; ?></a></h3>
+										<div class="childExcerpt"><p><?php
+											if ($pageChild->post_excerpt){
+										      echo $pageChild->post_excerpt;
+										    }
+										?></p></div>
+										<a class="readMore" href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">Read more</a>
+									</div>
+
 								</div>
+							</div>
 								<?php endforeach; endif;
 								?>
 								</div>

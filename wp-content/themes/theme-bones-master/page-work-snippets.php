@@ -12,15 +12,11 @@
  * For more info: http://codex.wordpress.org/Page_Templates
 */
 ?>
-
 <?php the_post(); ?>
-<div class="workThumbnail">
-  <a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>"><?php echo get_the_post_thumbnail($pageChild->ID, 'thumbnail'); ?></a>	 
-</div>
 <div class="workContent">
 <h3 class="workSnippetTitle"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-<!-- <div class="serviceSnippetExcerpt">
-<?php the_excerpt() ?>
-</div> -->
 <a class="readMore" href="<?php echo get_permalink(); ?>">Read more</a>
+</div>
+<div class="workThumbnail">
+  <a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>"><?php echo get_the_post_thumbnail($pageChild->ID, 'thumbnail'); ?></a>	 
 </div>

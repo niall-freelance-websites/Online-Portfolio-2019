@@ -35,6 +35,8 @@
 
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
@@ -78,6 +80,13 @@
         			               'depth' => 0,                                   // limit the depth of the nav
     					         'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
+
+						<?php
+						if ( is_active_sidebar( 'header-widget' ) ) : ?>
+					    <div id="header-widget-area" class="hw-widget widget-area" role="complementary">
+						<?php dynamic_sidebar( 'header-widget' ); ?>
+					    </div>
+						<?php endif; ?>
 
 					</nav>
 

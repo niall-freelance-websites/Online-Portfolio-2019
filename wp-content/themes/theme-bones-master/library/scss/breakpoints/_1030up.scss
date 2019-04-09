@@ -12,3 +12,65 @@ be seen on the Desktop.
 .wrap {
   width: 100%;
 }
+
+.header{
+	padding: 10px 50px 0;
+}
+
+.entry-content .banner {
+    max-height: 605px;
+    p{
+    	font-size: 1.3em;
+    }
+    h1{
+    	font-size: 3.3em;
+    }
+    .bannerContent{
+    	top: 49%;
+    }
+}
+
+.nav li {
+     float: left; 
+}
+
+h2.home-intro{
+	font-size: 1.6em;
+	max-width: 900px;
+}
+
+.introWidth p.home-intro{
+	font-size: 1.3em;
+	max-width: 900px;
+}
+
+.workContainer {
+    div.insert-page{
+    	flex-basis: 32%;
+    }
+}
+
+.workSection{
+	padding: 60px 8% 120px;
+}
+
+.page-template-page-projects{
+    .entry-content .banner {
+        h1{
+            font-size: 2.6em;
+        }
+
+        .bannerContent{
+            transform: translateY(-30%);
+        }
+    }
+}
+
+.projectContainer{
+    .projectInfo{
+        padding: 0 1.5em 0 3.4em;
+    }
+}
+
+
+

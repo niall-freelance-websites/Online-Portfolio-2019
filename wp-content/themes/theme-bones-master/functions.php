@@ -191,6 +191,33 @@ function bones_register_sidebars() {
 } // don't remove this bracket!
 
 
+
+/************* Widgets Area *********************/
+
+function wpb_widgets_init() {
+register_sidebar( array(
+'name' => 'Header Widget',
+'id' => 'header-widget',
+'before_widget' => '<div class="hw-widget">',
+'after_widget' => '</div>',
+'before_title' => '<h2 class="hw-title">',
+'after_title' => '</h2>',
+) );
+
+register_sidebar( array(
+'name' => 'Footer Widget',
+'id' => 'footer-widget',
+'before_widget' => '<div class="fw-widget">',
+'after_widget' => '</div>',
+'before_title' => '<h2 class="fw-title">',
+'after_title' => '</h2>',
+) );
+
+}
+add_action( 'widgets_init', 'wpb_widgets_init' );
+
+
+
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout

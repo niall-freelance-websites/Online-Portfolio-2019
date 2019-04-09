@@ -24,7 +24,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 
-%btn, button, a.wp-block-button__link{
+%btn, button, .wp-block-button a.wp-block-button__link, div.wpforms-container-full .wpforms-form button[type=submit]{
   @include accent-gradient;
   display: inline-block;
   position: relative;
@@ -32,7 +32,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   text-decoration: none;
   text-transform: uppercase;
   color: $white;
-  font-size: 0.8em;
+  font-size: 0.84rem;
   line-height: normal;
   font-weight: 700;
   padding: 10px 20px 9px;
@@ -56,7 +56,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 } // end .button
 
 
-.arrowLink, a.arrowLink, .readMore, a.readMore{
+.arrowLink, a.arrowLink, .readMore, a.readMore, .arrowLinkReverse, a.arrowLinkReverse{
   font-family: sans-serif;
   font-style: italic;
   font-weight: 600;
@@ -64,6 +64,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   color: $text-color;
   text-decoration: none;
   position: relative;
+  font-size: 15px;
   &:before{
     content:'';
     display: block;
@@ -73,6 +74,16 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     height: 13px;
     right: -40px;
     top: 5px;
+    transform: scale(0.8) rotateY(0deg);
+  }
+}
+
+.arrowLinkReverse, a.arrowLinkReverse{
+  padding-left: 35px;
+  &:before{
+    right: auto;
+    left: 0;
+    transform: scale(0.8) rotateY(180deg);
   }
 }
 
