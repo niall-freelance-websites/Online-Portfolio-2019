@@ -1,0 +1,41 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+
+.page-template-page-projects{
+	.header{
+		/*background: $primary;*/
+	}
+	.entry-content .banner {
+	    max-height: 443px;
+
+	    h1{
+	    	font-size: 2.6em;
+	    }
+	}
+}
+
+.entry-content .banner {
+    max-height: 730px;
+    /*max-height: 680px;*/
+
+    h1{
+    	font-size: 6.625em;
+    }
+}
+
+h2.home-intro{
+	font-size: 1.6em;
+	max-width: 1020px;
+}
+
+.introWidth p.home-intro{
+	max-width: 1020px;
+}

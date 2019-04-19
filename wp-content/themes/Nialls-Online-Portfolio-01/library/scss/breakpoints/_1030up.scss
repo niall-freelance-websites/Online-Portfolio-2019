@@ -1,0 +1,72 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 100%;
+}
+
+.header{
+	/*padding: 10px 40px 0;*/
+}
+
+.entry-content .banner {
+    max-height: 605px;
+    p{
+    	font-size: 1.2em;
+    }
+    h1{
+    	font-size: 5.3em;
+    }
+    .bannerContent{
+    	top: 50%;
+    }
+}
+
+h2.home-intro{
+	font-size: 1.6em;
+	max-width: 900px;
+}
+
+.introWidth p.home-intro{
+	font-size: 1.1em;
+	max-width: 900px;
+}
+
+.workContainer {
+    div.insert-page{
+    	flex-basis: 32.4%;
+    }
+}
+
+.workSection{
+	padding: 0 2% 50px;
+}
+
+.page-template-page-projects{
+    .entry-content .banner {
+        h1{
+            font-size: 2.6em;
+        }
+
+        .bannerContent{
+            transform: translateY(-30%);
+        }
+    }
+}
+
+.projectContainer{
+    .projectInfo{
+        padding: 0 1.5em 0 3.4em;
+    }
+}
+
+
+
