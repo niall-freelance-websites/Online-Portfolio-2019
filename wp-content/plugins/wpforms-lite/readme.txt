@@ -2,8 +2,8 @@
 Contributors: wpforms, jaredatch, smub, slaFFik
 Tags: contact form, contact form plugin, forms, form builder, custom form, contact button, contact me, custom contact form, form manager, form, forms builder, forms creator, captcha, recaptcha, Akismet, email form, web form, feedback form, payment form, survey form, donation form, email submit form, message form, mailchimp, mailchimp form, aweber, aweber form, paypal, paypal form, stripe, stripe form, getresponse, getresponse form, email subscription, contact form widget, user registration form, wordpress registration, wordpress login form
 Requires at least: 4.8
-Tested up to: 5.0
-Stable tag: 1.5.1
+Tested up to: 5.1
+Stable tag: 1.5.2.2
 Requires PHP: 5.3.3
 License: GNU General Public License v2.0 or later
 
@@ -15,7 +15,7 @@ The best WordPress contact form plugin. Drag & Drop online form builder that hel
 
 We believe that you shouldn't have to hire a developer to create a WordPress contact form. That's why we built <a href="https://wpforms.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="WPForms">WPForms</a>, a drag & drop WordPress form builder that's EASY and POWERFUL.
 
-WPForms allow you to create beautiful contact forms, subscription forms, payment forms, and other type of forms for your site in minutes, not hours!
+WPForms allows you to create beautiful contact forms, subscription forms, payment forms, and other type of forms for your site in minutes, not hours!
 
 At WPForms, user experience is our #1 priority. Our pre-built form templates and workflows make WPForms the most beginner friendly contact form plugin in the market.
 
@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=eiQ3viAGung&rel=0
 
 = Drag & Drop Contact Form Builder =
 
-We were tired of the bloated and buggy contact form builder plugins. That's why we built WPForms to adapt to your workflow and allow you to create custom contact forms in minutes. By using our easy to use <a href="https://wpforms.com/features/drag-drop-online-form-builder/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">drag and drop online form builder</a>, you can easy add custom form fields, rearrange them, and basically create a complete contact form in 5 minutes or less.
+We were tired of the bloated and buggy contact form builder plugins. That's why we built WPForms to adapt to your workflow and allow you to create custom contact forms in minutes. By using our easy to use <a href="https://wpforms.com/features/drag-drop-online-form-builder/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">drag and drop online form builder</a>, you can easily add custom form fields, rearrange them, and basically create a complete contact form in 5 minutes or less.
 
 But don't just take our word. See what one of the WordPress experts are saying:
 
@@ -104,7 +104,7 @@ We also knew that our developer friends may want to extend contact forms further
 * <a href="https://wpforms.com/features/drag-drop-online-form-builder/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Online Form Builder</a> - Our powerful drag & drop contact form builder allows you to easily create WordPress contact forms and other online forms in just a few minutes without writing any code.
 * 100% Responsive - Mobile Friendly contact forms.
 * GDPR Friendly - Make your contact form GDPR compatible with just a few clicks.
-* <a href="https://wpforms.com/features/form-templates/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Form Templates</a> - Use our pre-built form templates to save time. Never start from scratch again.
+* <a href="https://wpforms.com/features/form-templates/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Form Templates</a> - Use our pre-built form templates to save time. Never start from scratch again (see all <a href="https://wpforms.com/demo/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">form templates demos</a>).
 * <a href="https://wpforms.com/features/spam-protection/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Spam Protection</a> - WPForms utilizes smart CAPTCHA and Honeypot method to stop spam contact form submissions.
 * <a href="https://wpforms.com/features/instant-notifications/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Instant Form Notification</a> - Quickly respond to incoming inquiries with our instant contact form notification system.
 * <a href="https://wpforms.com/features/form-confirmation/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Smart Form Confirmation</a> - Show a custom success message, or redirect users to a custom thank you page.
@@ -120,6 +120,8 @@ We also knew that our developer friends may want to extend contact forms further
 * <a href="https://wpforms.com/addons/form-abandonment-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Form Abandonment</a> - Unlock more leads and grow your business with partial-form submission.
 * <a href="https://wpforms.com/addons/form-locker-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Form Locker</a> - Manage form permissions and add access control rules including password-protected forms, members only forms, limit contact form entry per person, close form after specific date / time, etc.
 * <a href="https://wpforms.com/addons/offline-forms-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Offline Forms</a> - Let your visitors save their entered data offline and submit when their internet connection is restored.
+* <a href="https://wpforms.com/addons/form-pages-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Form Landing Pages</a> - Create "distraction-free" form landing pages to boost conversions. Great Google Forms alternative.
+* <a href="https://wpforms.com/addons/conversational-forms-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Conversational Forms</a> - Interactive form layout that makes your form feels more human and boost overall completion rate. Great for surveys and registration forms. Perfect Typeform alternative for WordPress without the high costs.
 
 = Integrations =
 
@@ -177,6 +179,8 @@ Visit <a href="http://www.wpbeginner.com/" rel="friend" title="WPBeginner">WPBeg
 2. Adding New Field
 3. Form Preview
 4. Form Settings
+5. Conversational Forms addon
+6. Form Pages addon
 
 == Frequently Asked Questions ==
 
@@ -241,6 +245,8 @@ WPForms drag & drop form builder combined with our addons is the most powerful W
 * Offline Contact Form
 * Password-Protected Contact Form
 * Members Only Contact Form
+* Conversational Forms like Typeform
+* Form Pages like Google Forms
 
 = I'd like access to all features. How can I get them? =
 
@@ -265,6 +271,41 @@ Thank you
 Syed Balkhi
 
 == Changelog ==
+
+= 1.5.2.2 =
+- Fixed: PHP notice/warnings from undefined constant (typo).
+
+= 1.5.2.1 =
+- Fixed: Required Checkbox fields asking for all inputs to be checked to pass validation.
+
+= 1.5.2 =
+- Added: Choice Limit advanced option for Checkbox fields.
+- Added: Smart domain name typo detection for Email fields.
+- Added: New Gutenberg block keywords to help with discovery.
+- Added: Link to "How to Properly Test Your WordPress Forms Before Launching" doc inside Gutenberg block.
+- Changed: Form builder field delete icon, now a trash can.
+- Changed: Updated jQuery inputmask library to v4.0.6.
+- Changed: Updated jQuery validation plugin to v1.19.0.
+- Changed: Clear Dashboard widget cache when form is created/deleted/updated.
+- Fixed: Blank form if using form template containing `target="_blank"`.
+- Fixed: Honeypot field not using unique IDs.
+- Fixed: Duplicating forms creating another duplicate if afterwards the table was sorted.
+- Fixed: Minor issues with Gutenberg editor.
+- Fixed: Form Builder embed modal showing Classic Editor instructions for Gutenberg users.
+- Fixed: Number field allowing non-numerical characters on iOS devices.
+- Fixed: Field Dynamic Choices not showing in form preview when using "Post Type".
+
+= 1.5.1.3 =
+- Fixed: Importing forms that containing `target="_blank"`.
+- Fixed: Quote support/display inside query param Smart Tags.
+- Fixed: Other minor fixes.
+
+= 1.5.1.1 =
+- Fixed: Conflict with WordPress 5.1 if form contained target="_blank".
+- Fixed: Unable to uncheck default Multiple Choice value in form builder after being set initially.
+- Fixed: PHP error when entries are exported after a field has been deleted.
+- Fixed: Form builder Email notification conditional logic settings display issue after new notification is added.
+- Fixed: Conflict with some themes preventing Multiple Choice fields from being selectable.
 
 = 1.5.1 =
 - Added: Complete translations for Spanish, Italian, Japanese, and German.

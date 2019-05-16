@@ -9,26 +9,26 @@ function wpmtst_form_info() {
 
 function wpmtst_form_setup() {
 	$form_values = WPMST()->form->get_form_values();
-	$cats        = (array) $form_values['category'];
+    $cats = (array) $form_values['category'];
 
 	echo '<div style="display: none;">';
 	wp_nonce_field( 'wpmtst_form_action', 'wpmtst_form_nonce', true, true );
 	echo '<input type="hidden" name="action" value="wpmtst_form">';
-	echo '<input type="hidden" name="form_id" value="' . esc_attr( WPMST()->atts( 'form_id' ) ) . '">';
-	echo '<input type="hidden" name="default_category" value="' . esc_attr( WPMST()->atts( 'category' ) ) . '">';
-	echo '<input type="hidden" name="category" value="' . esc_attr( implode( ',', $cats ) ) . '">';
+	echo '<input type="hidden" name="form_id" value="'. WPMST()->atts( 'form_id' ) .'">';
+	echo '<input type="hidden" name="default_category" value="'. WPMST()->atts( 'category' ) .'">';
+	echo '<input type="hidden" name="category" value="'. implode( ',', $cats ) .'">';
 	echo '</div>';
 }
 
 function wpmtst_form_message( $part ) {
-	echo wp_kses_post( wpmtst_get_form_message( $part ) );
+	echo wpmtst_get_form_message( $part );
 }
 
 function wpmtst_get_form_message( $part ) {
 	$form_options = get_option( 'wpmtst_form_options' );
-	$messages     = $form_options['messages'];
-	if ( isset( $messages[ $part ]['text'] ) ) {
-		return apply_filters( 'wpmtst_form_message', $messages[ $part ]['text'], $messages[ $part ] );
+	$messages = $form_options['messages'];
+	if ( isset( $messages[$part]['text'] ) ) {
+	    return apply_filters( 'wpmtst_form_message', $messages[ $part ]['text'], $messages[ $part ] );
 	}
 
 	return '';
@@ -65,23 +65,21 @@ function wpmtst_form_field( $field_name ) {
 function wpmtst_single_form_field( $field ) {
 	$form_values = WPMST()->form->get_form_values();
 
-	echo '<div class="' . esc_attr( wpmtst_field_group_classes( $field['input_type'], $field['name'] ) ) . '">';
+	echo '<div class="' . wpmtst_field_group_classes( $field['input_type'], $field['name'] ) . '">';
 
 	if ( 'checkbox' != $field['input_type'] ) {
 
 		if ( ! isset( $field['show_label'] ) || $field['show_label'] ) {
-			printf(
-				'<label for="wpmtst_%s" class="%s">%s</label>',
-				esc_attr( $field['name'] ),
-				esc_attr( wpmtst_field_label_classes( $field['input_type'], $field['name'] ) ),
-				esc_html( wpmtst_form_field_meta_l10n( $field['label'], $field, 'label' ) )
-			);
+			printf( '<label for="wpmtst_%s" class="%s">%s</label>',
+			    $field['name'],
+			    wpmtst_field_label_classes( $field['input_type'], $field['name'] ),
+			    wpmtst_form_field_meta_l10n( $field['label'], $field, 'label' ) );
 
 			if ( isset( $field['required'] ) && $field['required'] ) {
 				wpmtst_field_required_symbol();
 			}
 		}
-		wpmtst_field_before( $field );
+	    wpmtst_field_before( $field );
 
 	}
 
@@ -176,30 +174,28 @@ function wpmtst_single_form_field( $field ) {
 				);
 
 				if ( isset( $field['text'] ) ) {
-					echo '<label for="wpmtst_' . esc_attr( $field['name'] ) . '" class="checkbox-label">' . esc_html( wpmtst_form_field_meta_l10n( $field['text'], $field, 'text' ) ) . '</label>';
-
+					echo '<label for="wpmtst_' . esc_attr( $field['name'] ) . '" class="checkbox-label">' . wp_kses_post( wpmtst_form_field_meta_l10n( $field['text'], $field, 'text' ) ) . '</label>';
 					if ( isset( $field['required'] ) && $field['required'] ) {
 						wpmtst_field_required_symbol();
 					}
-				}
+			    }
 
-				echo '</div>';
-				break;
+			    echo '</div>';
+			    break;
 
-			default: // text, email, url
-				printf(
-					'<input id="wpmtst_%s" type="%s" class="%s" name="%s" value="%s" placeholder="%s" %s tabindex="0">',
-					esc_attr( $field['name'] ),
-					esc_attr( $field['input_type'] ),
-					esc_attr( wpmtst_field_classes( $field['input_type'], $field['name'] ) ),
-					esc_attr( $field['name'] ),
-					esc_attr( wpmtst_field_value( $field, $form_values ) ),
-					esc_attr( wpmtst_field_placeholder( $field ) ),
-					esc_attr( wpmtst_field_required_tag( $field ) )
-				);
+		    default: // text, email, url
+			    printf( '<input id="wpmtst_%s" type="%s" class="%s" name="%s" %s %s %s tabindex="0">',
+			            $field['name'],
+			            $field['input_type'],
+			            wpmtst_field_classes( $field['input_type'], $field['name'] ),
+			            $field['name'],
+			            wpmtst_field_value( $field, $form_values ),
+			            wpmtst_field_placeholder( $field ),
+			            wpmtst_field_required_tag( $field ) );
 
-		}
-	}
+	    }
+
+    }
 
 	wpmtst_field_after( $field );
 	wpmtst_field_error( $field );
@@ -255,10 +251,10 @@ function wpmtst_field_label_classes( $type, $name ) {
  * @return string
  */
 function wpmtst_field_classes( $type = null, $name = null ) {
-	$errors     = WPMST()->form->get_form_errors();
+	$errors = WPMST()->form->get_form_errors();
 	$class_list = array();
 
-	switch ( $type ) {
+	switch( $type ) {
 		case 'email':
 			$class_list[] = 'text';
 			$class_list[] = 'email';
@@ -300,7 +296,8 @@ function wpmtst_field_value( $field, $form_values ) {
 	}
 
 	$value = apply_filters( 'wpmtst_field_value', $value, $field, $form_values );
-	return $value;
+
+	return ' value="' . esc_attr( $value ) . '"';
 }
 
 /**
@@ -312,7 +309,7 @@ function wpmtst_field_value( $field, $form_values ) {
  */
 function wpmtst_field_placeholder( $field ) {
 	if ( isset( $field['placeholder'] ) && $field['placeholder'] ) {
-		return esc_attr( wpmtst_form_field_meta_l10n( $field['placeholder'], $field, 'placeholder' ) );
+		return ' placeholder="' . esc_attr( wpmtst_form_field_meta_l10n( $field['placeholder'], $field, 'placeholder' ) ) . '"';
 	}
 
 	return '';
@@ -345,21 +342,21 @@ function wpmtst_field_required_notice() {
 	if ( isset( $notice['enabled'] ) && $notice['enabled'] ) {
 		ob_start();
 		?>
-		<p class="required-notice">
+        <p class="required-notice">
 			<?php wpmtst_field_required_symbol(); ?><?php wpmtst_form_message( 'required-field' ); ?>
-		</p>
+        </p>
 		<?php
 		$html = ob_get_clean();
 	}
 	// Echo even if disabled to allow a custom notice.
-	echo wp_kses_post( apply_filters( 'wpmtst_field_required', $html ) );
+    echo( apply_filters( 'wpmtst_field_required', $html ) );
 }
 
 /**
  * Print required field symbol.
  */
 function wpmtst_field_required_symbol() {
-	echo wp_kses_post( apply_filters( 'wpmtst_field_required_symbol', '<span class="required symbol"></span>' ) );
+	echo apply_filters( 'wpmtst_field_required_symbol', '<span class="required symbol"></span>' );
 }
 
 /**
@@ -368,10 +365,10 @@ function wpmtst_field_required_symbol() {
  * @param $field
  */
 function wpmtst_field_before( $field ) {
-	$before = wpmtst_get_form_field_meta( $field, 'before' );
-	if ( $before ) {
-		echo '<span class="before">' . wp_kses_post( $before ) . '</span>';
-	}
+    $before = wpmtst_get_form_field_meta( $field, 'before' );
+    if ( $before ) {
+	    echo '<span class="before">' . $before . '</span>';
+    }
 }
 
 /**
@@ -380,8 +377,8 @@ function wpmtst_field_before( $field ) {
  * @param $field
  */
 function wpmtst_field_after( $field ) {
-	$after = wpmtst_get_form_field_meta( $field, 'after' );
-	echo '<span class="after">' . wp_kses_post( $after ) . '</span>';
+    $after = wpmtst_get_form_field_meta( $field, 'after' );
+    echo '<span class="after">' . $after . '</span>';
 }
 
 /**
@@ -393,11 +390,11 @@ function wpmtst_field_after( $field ) {
  * @return mixed|string
  */
 function wpmtst_get_form_field_meta( $field, $meta ) {
-	if ( isset( $field[ $meta ] ) && $field[ $meta ] ) {
-		return apply_filters( 'wpmtst_form_field_meta', $field[ $meta ], $field, $meta );
-	}
+    if ( isset( $field[ $meta ] ) && $field[ $meta ] ) {
+        return apply_filters( 'wpmtst_form_field_meta', $field[ $meta ], $field, $meta );
+    }
 
-	return '';
+    return '';
 }
 
 /**
@@ -450,6 +447,11 @@ function wpmtst_form_captcha() {
 		return;
 	}
 
+	// removed `really simple captcha` as of 2.37
+	if ( 'really-simple-captcha' === $form_options['captcha'] ) {
+		return;
+	}
+
 	/**
 	 * Only display Captcha label if properly configured.
 	 */
@@ -464,25 +466,24 @@ function wpmtst_form_captcha() {
 	/**
 	 * To display or not to display.
 	 */
-	if ( $invisible && 'captcha-pro' == $form_options['captcha'] ) {
+    if ( $invisible && 'captcha-pro' == $form_options['captcha']) {
 
 		echo '<div class="form-field wpmtst-captcha">';
-		echo wp_kses_post( $captcha_html );
+		echo $captcha_html;
 		echo '</div>';
 
 	} elseif ( $invisible ) {
-
-		echo wp_kses_post( $captcha_html );
+		echo $captcha_html;
 
 	} else {
-
 		?>
 		<div class="form-field wpmtst-captcha">
 			<?php if ( wpmtst_get_form_message( 'captcha' ) ) : ?>
-			<label for="wpmtst_captcha"><?php wpmtst_form_message( 'captcha' ); ?></label><span class="required symbol"></span>
+            <label for="wpmtst_captcha"><?php wpmtst_form_message( 'captcha' ); ?></label><span class="required symbol"></span>
 			<?php endif; ?>
+
 			<div>
-				<?php echo wp_kses_post( $captcha_html ); ?>
+				<?php echo $captcha_html; ?>
 				<?php if ( isset( $errors['captcha'] ) ) : ?>
 					<p><label class="error"><?php echo esc_html( $errors['captcha'] ); ?></label></p>
 				<?php endif; ?>
@@ -536,7 +537,7 @@ function wpmtst_form_captcha_invisible() {
 function wpmtst_form_submit_button( $preview = false ) {
 	?>
 	<div class="form-field wpmtst-submit">
-		<label><input type="<?php echo $preview ? 'button' : 'submit'; ?>" id="wpmtst_submit_testimonial" name="wpmtst_submit_testimonial" value="<?php echo esc_attr( wpmtst_get_form_message( 'form-submit-button' ) ); ?>" class="<?php echo esc_attr( apply_filters( 'wpmtst_submit_button_class', 'button' ) ); ?>" tabindex="0"></label>
+		<label><input type="<?php echo $preview ? 'button' : 'submit'; ?>" id="wpmtst_submit_testimonial" name="wpmtst_submit_testimonial" value="<?php esc_attr_e( wpmtst_get_form_message( 'form-submit-button' ) ); ?>" class="<?php echo esc_attr( apply_filters( 'wpmtst_submit_button_class', 'button' ) ); ?>" tabindex="0"></label>
 	</div>
 	<?php
 }
@@ -549,17 +550,15 @@ function wpmtst_form_submit_button( $preview = false ) {
  */
 function wpmtst_form_category_checklist_frontend( $default_cats = array() ) {
 	?>
-	<div class="strong-category-list-panel">
-		<ul class="strong-category-list">
-			<?php
-			$args = array(
+    <div class="strong-category-list-panel">
+        <ul class="strong-category-list">
+			<?php $args = array(
 				'selected_cats' => $default_cats,
 				'checked_ontop' => false,
-			);
-			?>
+			); ?>
 			<?php wpmtst_terms_checklist( $args ); ?>
-		</ul>
-	</div>
+        </ul>
+    </div>
 	<?php
 }
 
@@ -605,12 +604,12 @@ function wpmtst_terms_checklist( $args = array() ) {
 	$r = wp_parse_args( $params, $defaults );
 
 	if ( empty( $r['walker'] ) || ! ( $r['walker'] instanceof Walker ) ) {
-		$walker = new Walker_Strong_Category_Checklist_Front();
+		$walker = new Walker_Strong_Category_Checklist_Front;
 	} else {
 		$walker = $r['walker'];
 	}
 
-	$taxonomy             = $r['taxonomy'];
+	$taxonomy = $r['taxonomy'];
 	$descendants_and_self = (int) $r['descendants_and_self'];
 
 	$args = array( 'taxonomy' => $taxonomy );
@@ -624,30 +623,24 @@ function wpmtst_terms_checklist( $args = array() ) {
 	if ( is_array( $r['popular_cats'] ) ) {
 		$args['popular_cats'] = $r['popular_cats'];
 	} else {
-		$args['popular_cats'] = get_terms(
-			$taxonomy,
-			array(
-				'fields'       => 'ids',
-				'orderby'      => 'count',
-				'order'        => 'DESC',
-				'number'       => 10,
-				'hierarchical' => false,
-			)
-		);
+		$args['popular_cats'] = get_terms( $taxonomy, array(
+			'fields'       => 'ids',
+			'orderby'      => 'count',
+			'order'        => 'DESC',
+			'number'       => 10,
+			'hierarchical' => false,
+		) );
 	}
 
 	// Select a _single_ sibling and its descendants.
 	// Assembling a list of _multiple_ siblings would go here.
 	if ( $descendants_and_self ) {
-		$categories = (array) get_terms(
-			$taxonomy,
-			array(
-				'child_of'     => $descendants_and_self,
-				'hierarchical' => 0,
-				'hide_empty'   => 0,
-			)
-		);
-		$self       = get_term( $descendants_and_self, $taxonomy );
+		$categories = (array) get_terms( $taxonomy, array(
+			'child_of'     => $descendants_and_self,
+			'hierarchical' => 0,
+			'hide_empty'   => 0,
+		) );
+		$self = get_term( $descendants_and_self, $taxonomy );
 		array_unshift( $categories, $self );
 	} else {
 		$categories = (array) get_terms( $taxonomy, array( 'get' => 'all' ) );
@@ -657,14 +650,14 @@ function wpmtst_terms_checklist( $args = array() ) {
 
 	if ( $r['checked_ontop'] ) {
 		// Post-process $categories rather than adding an exclude to the get_terms() query
-		// to keep the query the same across all posts (for any query cache)
+        // to keep the query the same across all posts (for any query cache)
 		$checked_categories = array();
-		$keys               = array_keys( $categories );
+		$keys = array_keys( $categories );
 
 		foreach ( $keys as $k ) {
-			if ( in_array( $categories[ $k ]->term_id, $args['selected_cats'] ) ) {
-				$checked_categories[] = $categories[ $k ];
-				unset( $categories[ $k ] );
+			if ( in_array( $categories[$k]->term_id, $args['selected_cats'] ) ) {
+				$checked_categories[] = $categories[$k];
+				unset( $categories[$k] );
 			}
 		}
 
@@ -675,7 +668,7 @@ function wpmtst_terms_checklist( $args = array() ) {
 	$output .= call_user_func_array( array( $walker, 'walk' ), array( $categories, 0, $args ) );
 
 	if ( $r['echo'] ) {
-		echo wp_kses_post( $output );
+		echo $output;
 	}
 
 	return $output;

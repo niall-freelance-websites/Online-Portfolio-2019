@@ -64,7 +64,19 @@ h2.home-intro{
 
 .projectContainer{
     .projectInfo{
-        padding: 0 1.5em 0 3.4em;
+        /*padding: 0 1.5em 0 3.4em;*/
+    }
+}
+
+.scrollBoxContainer{
+    margin: -18% auto 0;
+
+    p{
+        font-size: 1.2em;
+    }
+
+    h1{
+        font-size: 2.6em;
     }
 }
 

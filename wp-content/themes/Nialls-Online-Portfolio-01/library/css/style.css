@@ -955,12 +955,13 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   color: #3A3E4B;
   text-decoration: none;
   position: relative;
-  font-size: 15px; }
+  font-size: 15px;
+  outline: none; }
   .arrowLink:before, a.arrowLink:before, .readMore:before, a.readMore:before, .arrowLinkReverse:before, a.arrowLinkReverse:before {
     content: '';
     display: block;
     position: absolute;
-    background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/theme-bones-master/library/images/buttonArrow.svg);
+    background: url(../images/buttonArrow.svg);
     width: 30px;
     height: 13px;
     right: -40px;
@@ -968,7 +969,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     transform: scale(0.8) rotateY(0deg); }
 
 .workContent .readMore:before, .workContent a.readMore:before {
-  background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/Nialls-Online-Portfolio-01/library/images/buttonArrowWhite.svg); }
+  background: url(../images/buttonArrowWhite.svg); }
 
 .arrowLinkReverse, a.arrowLinkReverse {
   padding-left: 35px; }
@@ -1399,26 +1400,73 @@ h2.home-intro {
   width: 100%;
   margin: 0 auto; }
 
+.scrollBoxContainer {
+  position: relative;
+  padding: 0 1.5em;
+  max-width: 1010px;
+  margin: 0 auto;
+  text-align: center;
+  color: #272A34; }
+  .scrollBoxContainer h1 {
+    margin: 1em 0 0.15em;
+    font-size: 1.1em; }
+  .scrollBoxContainer p {
+    font-size: 1em; }
+
+.entry-content .scrollBrowserTop img {
+  margin: 0;
+  display: block; }
+
+div.box2 {
+  height: 300px;
+  background-size: 100% auto;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-shadow: 0px 11px 28px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 11px 28px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 11px 28px 0px rgba(0, 0, 0, 0.14); }
+
+.project-01 {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg01a.jpg); }
+
+.project-02 {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg02a.jpg); }
+
+.project-03 {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg04a.jpg); }
+
+.project-04 {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg03a.jpg); }
+
+.project-05 {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg05a.jpg); }
+
+.project-06 {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg06a.jpg); }
+
 .entry-content .banner {
   /*background-color: $text-color;*/
   position: relative;
   text-align: center;
   color: white;
   max-height: 273px;
-  overflow: hidden; }
+  overflow: hidden;
+  /*p:first-of-type{
+  	display: none;
+  }*/ }
   .entry-content .banner figure {
     line-height: 0; }
   .entry-content .banner img {
     width: 100%;
     opacity: 1;
     /*mix-blend-mode: multiply;*/
-    margin: 0; }
+    margin: 0;
+    top: 0px;
+    position: relative; }
   .entry-content .banner .bannerContent {
     position: absolute;
-    			/*height: 200px;
-        		margin-top: -100px;*/
     top: 50%;
-    transform: translateY(-40%);
+    transform: translateY(-50%);
     left: 0;
     right: 0;
     padding: 0 20px; }
@@ -1432,11 +1480,16 @@ h2.home-intro {
     font-size: 1em;
     margin: 0 auto 0.5em;
     max-width: 730px; }
-  .entry-content .banner p:first-of-type {
-    display: none; }
   .entry-content .banner button {
     margin-top: 15px;
     font-size: 0.8rem; }
+
+body.home .entry-content .banner {
+  background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/Banner-Image-11a.jpg);
+  height: 100vh;
+  background-position: right;
+  background-size: cover;
+  max-height: none; }
 
 .scrollDown {
   display: none;
@@ -1448,7 +1501,7 @@ h2.home-intro {
     content: '';
     display: block;
     position: absolute;
-    background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/Nialls-Online-Portfolio-01/library/images/buttonArrowWhite.svg);
+    background: url(../images/buttonArrowWhite.svg);
     width: 30px;
     height: 13px;
     right: 0;
@@ -1456,6 +1509,17 @@ h2.home-intro {
     margin: 0 auto;
     bottom: -24px;
     transform: scale(0.8) rotate(90deg); }
+
+.entry-content .banner .scrollCircle img {
+  max-width: 34px;
+  margin-top: 20px; }
+
+#intro:before {
+  display: block;
+  content: " ";
+  margin-top: -78px;
+  height: 78px;
+  visibility: hidden; }
 
 /*********************
 Work Section
@@ -1529,6 +1593,10 @@ Work Section
   .regularSection p {
     padding: 0 20px;
     max-width: 600px; }
+  .regularSection a:link, .regularSection a:visited:link {
+    text-decoration: none;
+    color: #272A34;
+    font-weight: bold; }
 
 /*********************
 Work Section Grid
@@ -1660,7 +1728,8 @@ h2.testimonialHeader {
   background-image: url(../images/testiMoreBtn-a.png);
   width: 33px;
   height: 33px;
-  background-size: contain; }
+  background-size: contain;
+  right: 0; }
   .strong-view.controls-style-buttons:not(.rtl) .wpmslider-next:before {
     content: ''; }
 
@@ -1677,7 +1746,7 @@ h2.testimonialHeader {
     .entry-content .displayImages .displayImage:first-of-type:after {
       content: '';
       position: absolute;
-      background-image: url(../images/circle-logo-02a.png);
+      background-image: url(../images/circle-logo-02b.png);
       background-size: contain;
       background-repeat: no-repeat;
       width: 60%;
@@ -1692,17 +1761,21 @@ h2.testimonialHeader {
 Project Pages
 *********************/
 .page-template-page-projects .entry-content {
-  padding-bottom: 80px; }
+  padding-bottom: 30px; }
 .page-template-page-projects .absolute-top-banner {
   background-color: #F8F8F8; }
 .page-template-page-projects .entry-content .banner {
-  max-height: 443px; }
+  max-height: 443px;
+  background-color: rgba(39, 42, 52, 0.8); }
+  .page-template-page-projects .entry-content .banner img {
+    mix-blend-mode: multiply;
+    /*filter: blur(4px);*/ }
   .page-template-page-projects .entry-content .banner h1 {
     font-size: 1.1em;
     font-family: sans-serif;
     font-weight: 700; }
-  .page-template-page-projects .entry-content .banner img {
-    mix-blend-mode: multiply; }
+  .page-template-page-projects .entry-content .banner .bannerContent {
+    display: none; }
 
 .projectContainer {
   padding: 0 1.5em;
@@ -1718,6 +1791,10 @@ Project Pages
       margin: 0 0 1em; }
     .projectContainer .projectInfo .ProjectsNavigation {
       padding: 0; }
+      .projectContainer .projectInfo .ProjectsNavigation a.arrowLink {
+        color: #FD6969; }
+  .projectContainer a.arrowLinkReverse {
+    display: none; }
 
 .viewWeb a, .viewWeb a:visited {
   font-family: sans-serif;
@@ -1788,18 +1865,22 @@ LINK STYLES
 *********************/
 a, a:visited {
   color: #FD6969;
+  outline: none;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
     color: #fc3c3c; }
+  a:active, a:visited:active {
+    outline: none; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
     so it basically works like the :hover selector
     for mobile devices.
     */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    outline: none; }
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
@@ -1845,7 +1926,7 @@ HEADER STYLES
 .header {
   z-index: 999;
   background: transparent;
-  position: fixed;
+  /*position: fixed;*/
   padding: 0;
   width: 100%;
   -webkit-transition: all .2s ease;
@@ -1944,6 +2025,8 @@ and more scalable.
 
 body.show-nav #inner-header {
   overflow: hidden; }
+body.show-nav .header {
+  position: fixed; }
 body.show-nav .mainNav {
   opacity: 1;
   min-height: 100vh; }
@@ -1969,14 +2052,14 @@ body.show-contact {
   opacity: 0;
   min-width: 100vw;
   max-height: none;
-  margin-top: -78px;
+  margin-top: -68px;
   overflow: hidden;
   background-color: rgba(39, 42, 52, 0.95);
-  -webkit-transition: all .6s;
-  -moz-transition: all .6s;
-  -ms-transition: all .6s;
-  -o-transition: all .6s;
-  transition: all .6s; }
+  -webkit-transition: opacity .6s;
+  -moz-transition: opacity .6s;
+  -ms-transition: opacity .6s;
+  -o-transition: opacity .6s;
+  transition: opacity .6s; }
   .mainNav ul {
     display: none; }
 
@@ -2393,7 +2476,7 @@ footer.footer {
   display: none; }
 
 div#inner-footer {
-  margin: 20px 0 0 30px; }
+  margin: 20px 0 20px 30px; }
 
 p.emailContact, p.phoneContact {
   position: relative;
@@ -2507,6 +2590,15 @@ tweeners.
   .page-template-page-projects .entry-content .banner h1 {
     font-size: 1.8em; }
 
+  .scrollBoxContainer {
+    margin: -22% auto 0;
+    color: #fff; }
+    .scrollBoxContainer h1 {
+      margin: 0.25em 0 0.15em; }
+
+  div.box2 {
+    height: 400px; }
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -2583,13 +2675,13 @@ you can add resource intensive styles.
   .home p {
     font-size: 17px; }
 
-  /*.absolute-top-banner {
-  	margin-top: -135px;
-  }*/
+  body.home .entry-content .banner {
+    background-position: center center; }
+
   .entry-content .banner {
     max-height: 520px; }
     .entry-content .banner .bannerContent {
-      transform: translateY(-60%); }
+      transform: translateY(-50%); }
     .entry-content .banner h1 {
       font-size: 4.3em; }
     .entry-content .banner p:first-of-type {
@@ -2666,27 +2758,48 @@ you can add resource intensive styles.
   .regularSection {
     padding: 0 7%; }
 
+  .strong-view.controls-style-buttons:not(.rtl) .wpmslider-next {
+    right: 10px; }
+
   /*********************
   Project Pages
   *********************/
-  .page-template-page-projects .entry-content .banner h1 {
-    font-size: 1.8em; }
-  .page-template-page-projects .entry-content .banner .bannerContent {
-    transform: translateY(0); }
+  .page-template-page-projects .entry-content {
+    padding-bottom: 60px; }
+    .page-template-page-projects .entry-content .banner h1 {
+      font-size: 1.8em; }
+    .page-template-page-projects .entry-content .banner .bannerContent {
+      transform: translateY(0); }
 
   .projectContainer .projectInfo {
-    width: 38%;
-    float: right;
+    /*width: 38%;*/
+    width: 100%;
+    max-width: 800px;
+    /*float: right;*/
     display: inline-block;
-    padding: 0 1.5em 0 2em;
-    position: -webkit-sticky;
+    /*padding: 0 1.5em 0 2em;*/
+    /*position: -webkit-sticky;*/
     /*position: sticky;*/
     /*top: 30px;*/
     top: 130px; }
   .projectContainer img {
-    width: 62%;
+    /*width: 62%;*/
+    width: 100%;
     /*float: left;*/
     display: inline-block; }
+  .projectContainer p {
+    max-width: 800px; }
+
+  .scrollBoxContainer h1 {
+    font-size: 1.8em; }
+  .scrollBoxContainer p {
+    font-size: 1em; }
+
+  div.box2 {
+    height: 600px; }
+
+  .mainNav {
+    margin-top: -78px; }
 
   /*********************
   LAYOUT & GRID STYLES
@@ -2867,7 +2980,14 @@ you can add resource intensive styles.
     transform: translateY(-30%); }
 
   .projectContainer .projectInfo {
-    padding: 0 1.5em 0 3.4em; } }
+    /*padding: 0 1.5em 0 3.4em;*/ }
+
+  .scrollBoxContainer {
+    margin: -18% auto 0; }
+    .scrollBoxContainer p {
+      font-size: 1.2em; }
+    .scrollBoxContainer h1 {
+      font-size: 2.6em; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2886,7 +3006,7 @@ This is for the larger monitors and possibly full screen viewers.
   .page-template-page-projects .header {
     /*background: $primary;*/ }
   .page-template-page-projects .entry-content .banner {
-    max-height: 443px; }
+    max-height: 400px; }
     .page-template-page-projects .entry-content .banner h1 {
       font-size: 2.6em; }
 
@@ -2896,12 +3016,21 @@ This is for the larger monitors and possibly full screen viewers.
     .entry-content .banner h1 {
       font-size: 6.625em; }
 
+  .scrollBoxContainer {
+    /*margin: -270px auto 0;*/ }
+
   h2.home-intro {
     font-size: 1.6em;
     max-width: 1020px; }
 
   .introWidth p.home-intro {
-    max-width: 1020px; } }
+    max-width: 1020px; }
+
+  img.imageSpace-01 {
+    margin: 10px 0 75px; }
+
+  img.imgMarginTop {
+    margin-top: 50px; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

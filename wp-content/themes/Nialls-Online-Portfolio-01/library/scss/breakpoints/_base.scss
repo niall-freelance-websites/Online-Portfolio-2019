@@ -127,6 +127,62 @@ header.article-header{
 	margin: 0 auto;
 }
 
+.scrollBoxContainer{
+	position: relative;
+	padding: 0 1.5em;
+	max-width: 1010px;
+	margin: 0 auto;
+	text-align: center;
+	color: $primary;
+
+	h1{
+	    margin: 1em 0 0.15em;
+		font-size: 1.1em;
+	}
+
+	p{
+	    font-size: 1em;
+	}
+}
+
+.entry-content{
+	.scrollBrowserTop{
+		img{
+			margin: 0;
+		    display: block;
+		}
+	}
+}
+
+div.box2{
+	height: 300px;
+    background-size: 100% auto;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-box-shadow: 0px 11px 28px 0px rgba(0,0,0,0.14);
+	-moz-box-shadow: 0px 11px 28px 0px rgba(0,0,0,0.14);
+	box-shadow: 0px 11px 28px 0px rgba(0,0,0,0.14);
+}
+
+.project-01{
+	background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg01a.jpg);
+}
+.project-02{
+	background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg02a.jpg);
+}
+.project-03{
+	background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg04a.jpg);
+}
+.project-04{
+	background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg03a.jpg);
+}
+.project-05{
+	background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg05a.jpg);
+}
+.project-06{
+	background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/projectImg06a.jpg);
+}
+
 .entry-content{
 	.banner{
 		/*background-color: $text-color;*/
@@ -145,14 +201,14 @@ header.article-header{
 			opacity: 1;
 			/*mix-blend-mode: multiply;*/
 			margin: 0;
+			top: 0px;
+    		position: relative;
 		}
 
 		.bannerContent{
 			position: absolute;
-			/*height: 200px;
-    		margin-top: -100px;*/
 			top: 50%;
-			transform: translateY(-40%);
+			transform: translateY(-50%);
 		    left: 0;
     		right: 0;
     		padding: 0 20px;
@@ -172,14 +228,24 @@ header.article-header{
 		    max-width: 730px;
 		}
 
-		p:first-of-type{
+		/*p:first-of-type{
 			display: none;
-		}
+		}*/
 
 		button{
 			margin-top: 15px;
 			font-size: 0.8rem;
 		}
+	}
+}
+
+body.home{
+	.entry-content .banner{
+		background-image: url(http://crafteddigital.co.uk/wp-content/uploads/2019/04/Banner-Image-11a.jpg);
+	    height: 100vh;
+	    background-position: right;
+	    background-size: cover;
+	    max-height: none;
 	}
 }
 
@@ -193,7 +259,7 @@ header.article-header{
     	content:'';
 	    display: block;
 	    position: absolute;
-	    background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/Nialls-Online-Portfolio-01/library/images/buttonArrowWhite.svg);
+	    background: url(../images/buttonArrowWhite.svg);
 	    width: 30px;
 	    height: 13px;
 	    right: 0;
@@ -202,6 +268,21 @@ header.article-header{
 	    bottom: -24px;
 	    transform: scale(0.8) rotate(90deg);
     }
+}
+
+.entry-content .banner .scrollCircle{
+	img{
+		max-width: 34px;
+		margin-top: 20px; 
+	}
+}
+
+#intro:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -78px; 
+  height: 78px; 
+  visibility: hidden; 
 }
 
 /*********************
@@ -287,6 +368,12 @@ Work Section
 	p{
 		padding: 0 20px;
 		max-width: 600px;
+	}
+
+	a:link, a:visited:link{
+		text-decoration: none;
+		color: $primary;
+		font-weight: bold;
 	}
 }
 
@@ -460,6 +547,7 @@ h2.testimonialHeader{
 	width: 33px;
 	height: 33px;
 	background-size: contain;
+	right: 0;
 	&:before{
 		content:'';
 	}
@@ -483,7 +571,7 @@ h2.testimonialHeader{
 	    		&:after{
 	    			content:'';
 	    			position: absolute;
-	    			background-image: url(../images/circle-logo-02a.png);
+	    			background-image: url(../images/circle-logo-02b.png);
     			    background-size: contain;
 			        background-repeat: no-repeat;
 	    			width: 60%;
@@ -508,7 +596,7 @@ Project Pages
 
 .page-template-page-projects{
 	.entry-content{
-		padding-bottom: 80px;
+		padding-bottom: 30px;
 
 	}
 
@@ -518,15 +606,20 @@ Project Pages
 
 	.entry-content .banner {
 	    max-height: 443px;
+	    background-color: rgba($primary,0.8);;
+
+	    img{
+	    	mix-blend-mode: multiply;
+    	    /*filter: blur(4px);*/
+	    }
 
 	    h1{
 	    	font-size: 1.1em;
 	    	font-family: sans-serif;
 	    	font-weight: 700;
 	    }
-
-	    img{
-    	    mix-blend-mode: multiply;
+	    .bannerContent{
+	    	display: none;
 	    }
 	}
 }
@@ -551,7 +644,14 @@ Project Pages
 
 	    .ProjectsNavigation{
     	    padding: 0;
+    	    a.arrowLink{
+    	    	color: $accent;
+    	    }
 	    }
+	}
+
+	a.arrowLinkReverse{
+		display: none;
 	}
 }
 
@@ -658,6 +758,7 @@ LINK STYLES
 
 a, a:visited {
 	color: $link-color;
+	outline: none;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -666,7 +767,7 @@ a, a:visited {
 
 	/* on click */
 	&:active {
-
+		outline: none;
 	}
 
 	/* mobile tap color */
@@ -677,6 +778,7 @@ a, a:visited {
 		for mobile devices.
 		*/
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+		outline: none;
 	}
 }
 
@@ -734,7 +836,7 @@ HEADER STYLES
 .header {
 	z-index: 999;
 	background: transparent;
-	position: fixed;
+	/*position: fixed;*/
 	padding: 0;
 	width: 100%;
 	-webkit-transition: all .2s ease;
@@ -866,6 +968,10 @@ body.show-nav{
 		overflow: hidden;
 	}
 
+	.header{
+		position: fixed;
+	}
+
 	.mainNav{
 		opacity: 1;
 		min-height: 100vh; 
@@ -900,14 +1006,14 @@ body.show-contact{
 	opacity: 0;
 	min-width: 100vw;
 	max-height: none;
-    margin-top: -78px;
+    margin-top: -68px;
     overflow: hidden;
     background-color: rgba(39, 42, 52, 0.95);
-    -webkit-transition: all .6s;
-    -moz-transition: all .6s;
-    -ms-transition: all .6s;
-    -o-transition: all .6s;
-    transition: all .6s;
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -ms-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    transition: opacity .6s;
 
     ul{
     	display: none;
@@ -1663,7 +1769,7 @@ footer.footer {
 }
 
 div#inner-footer {
-    margin: 20px 0 0 30px;
+    margin: 20px 0 20px 30px;
 }
 
 p.emailContact, p.phoneContact{

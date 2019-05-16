@@ -14,7 +14,7 @@ on larger screens.
 		/*background: $primary;*/
 	}
 	.entry-content .banner {
-	    max-height: 443px;
+	    max-height: 400px;
 
 	    h1{
 	    	font-size: 2.6em;
@@ -31,6 +31,10 @@ on larger screens.
     }
 }
 
+.scrollBoxContainer{
+	/*margin: -270px auto 0;*/
+}
+
 h2.home-intro{
 	font-size: 1.6em;
 	max-width: 1020px;
@@ -38,4 +42,12 @@ h2.home-intro{
 
 .introWidth p.home-intro{
 	max-width: 1020px;
+}
+
+img.imageSpace-01{
+    margin: 10px 0 75px;
+}
+
+img.imgMarginTop{
+	margin-top: 50px;
 }

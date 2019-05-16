@@ -65,11 +65,12 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   text-decoration: none;
   position: relative;
   font-size: 15px;
+  outline: none;
   &:before{
     content:'';
     display: block;
     position: absolute;
-    background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/theme-bones-master/library/images/buttonArrow.svg);
+    background: url(../images/buttonArrow.svg);
     width: 30px;
     height: 13px;
     right: -40px;
@@ -81,7 +82,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .workContent{
   .readMore, a.readMore{
     &:before{
-    background: url(http://localhost:8888/Online-Portfolio-2019/wp-content/themes/Nialls-Online-Portfolio-01/library/images/buttonArrowWhite.svg);
+    background: url(../images/buttonArrowWhite.svg);
     }
   }
 }

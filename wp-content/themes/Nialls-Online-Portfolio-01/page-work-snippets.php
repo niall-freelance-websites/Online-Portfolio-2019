@@ -15,7 +15,7 @@
 <?php the_post(); ?>
 <div class="workContent">
 <h3 class="workSnippetTitle"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-<a class="readMore" href="<?php echo get_permalink(); ?>">Read more</a>
+<a class="readMore" href="<?php echo get_permalink(); ?>">View project</a>
 </div>
 <div class="workThumbnail">
   <a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>"><?php echo get_the_post_thumbnail($pageChild->ID, 'thumbnail'); ?></a>	 

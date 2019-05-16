@@ -2,9 +2,9 @@
 
 				<div class="bioText02">
 					<h2>Let's work together</h2>
-					<p>Like my work, and interested in working together? Get in touch so we can discuss your requirements.</p>
-					<p>I'm currently booking in projects to commence from January 2019.</p>
-					<p><button onclick="window.location.href='http://localhost:8888/Online-Portfolio-2019/contact/'">Contact me</button></p>
+					<p>Like my work, and interested in working together? I am interested in hearing about projects big and small.</p>
+					<p>Feel free to get in touch so we can discuss your requirements.</p>
+					<p><button onclick="window.location.href='http://crafteddigital.co.uk/contact/'">Contact me</button></p>
 				</div>
 
 				<div id="inner-footer" class="wrap cf">

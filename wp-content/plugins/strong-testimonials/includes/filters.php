@@ -51,8 +51,6 @@ function wpmtst_content_filters() {
 }
 add_action( 'init', 'wpmtst_content_filters' );
 
-
-
 function wpmtst_add_allowed_tags( $tags ) {
 
 	// iframe
@@ -126,11 +124,17 @@ function wpmtst_add_allowed_tags( $tags ) {
 		'data-*' => true,
 		'hidden' => true,
 	);
+	$tags['source']   = array(
+		'type' => true,
+		'src'  => true,
+	);
 
 	$tags['span']['hidden'] = true;
 
 	$tags['img']['srcset'] = true;
-	$tags['img']['sizes'] = true;
+	$tags['img']['sizes']  = true;
+
+	$tags['div']['data-*'] = true;
 
 	$tags['noscript'] = array();
 
@@ -148,3 +152,19 @@ function wpmtst_safe_style_css( $styles ) {
 	return $styles;
 }
 add_filter( 'safe_style_css', 'wpmtst_safe_style_css' );
+
+
+/**
+ * Change single testimonial slug.
+ */
+add_filter( 'wpmtst_post_type', 'wpmtst_change_testimonial_slug' );
+function wpmtst_change_testimonial_slug( $args ) {
+
+	$options = get_option( 'wpmtst_options' );
+
+	if ( isset( $options['single_testimonial_slug'] ) && $options['single_testimonial_slug'] != '' ) {
+		$args['rewrite']['slug'] = $options['single_testimonial_slug'];
+	}
+
+	return $args;
+}

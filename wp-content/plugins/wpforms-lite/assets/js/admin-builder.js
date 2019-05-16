@@ -508,11 +508,25 @@ var WPFormsBuilder = window.WPFormsBuilder || ( function( document, window, $ ) 
 				app.fieldChoiceDelete(e, $(this));
 			});
 
+			// Field choices defaults - before change
+			$builder.on('mousedown', '.wpforms-field-option-row-choices input[type=radio]', function(e) {
+				var $this = $(this);
+				if ( $this.is(':checked') ) {
+					$this.attr('data-checked', '1');
+				} else {
+					$this.attr('data-checked', '0');
+				}
+			});
+
 			// Field choices defaults
-			$builder.on('change', '.wpforms-field-option-row-choices input[type=radio]', function(e) {
+			$builder.on('click', '.wpforms-field-option-row-choices input[type=radio]', function(e) {
 				var $this = $(this),
 					list  = $this.parent().parent();
 				$this.parent().parent().find('input[type=radio]').not(this).prop('checked',false);
+				if ( $this.attr('data-checked') === '1' ) {
+					$this.prop( 'checked', false );
+					$this.attr('data-checked', '0');
+				}
 				app.fieldChoiceUpdate(list.data('field-type'),list.data('field-id') );
 			});
 
@@ -2441,18 +2455,21 @@ var WPFormsBuilder = window.WPFormsBuilder || ( function( document, window, $ ) 
 								$newSettingsBlock.attr('data-block-id', nextID);
 								$newSettingsBlock.find('.wpforms-builder-settings-block-header span').text(settingsBlockName);
 								$newSettingsBlock.find('input, textarea, select').each(function(index, el) {
-									if ($(this).attr('name')) {
-										$(this).val('').attr('name', $(this).attr('name').replace(/\[(\d+)\]/, '['+nextID+']'));
-										if ($(this).is('select')) {
-											$(this).find('option').prop('selected',false).attr('selected',false);
-											$(this).find('option:first').prop('selected',true).attr('selected','selected');
-										} else if ( $(this).attr('type') === 'checkbox') {
-											$(this).prop('checked', false).attr('checked', false).val('1');
+									var $this = $(this);
+									if ($this.attr('name')) {
+										$this.val('')
+											.attr('name', $this.attr('name').replace(/\[(\d+)\]/, '['+nextID+']'));
+										if ($this.is('select')) {
+											$this.find('option').prop('selected',false).attr('selected',false);
+											$this.find('option:first').prop('selected',true).attr('selected','selected');
+										} else if ( $this.attr('type') === 'checkbox') {
+											$this.prop('checked', false).attr('checked', false).val('1');
 										} else {
-											$(this).val('').attr('value','');
+											$this.val('').attr('value','');
 										}
 									}
 								});
+
 								$newSettingsBlock.find('.wpforms-builder-settings-block-header input').val(settingsBlockName).attr('value',settingsBlockName);
 
 								if ( blockType === 'notification' ) {
@@ -2678,10 +2695,11 @@ var WPFormsBuilder = window.WPFormsBuilder || ( function( document, window, $ ) 
 			// Embed form
 			$builder.on('click', '#wpforms-embed', function(e) {
 				e.preventDefault();
-				var content = wpforms_builder.embed_modal;
+				var content  = wpforms_builder.embed_modal,
+					video_id = wpforms_builder.is_gutenberg ? 'ccyJMwyI8x0' : 'IxGVz3AjEe0';
 					content += '<input type=\'text\' value=\'[wpforms id="' + s.formID + '" title="false" description="false"]\' readonly id=\'wpforms-embed-shortcode\'>';
 					content += wpforms_builder.embed_modal_2;
-					content += '<br><br><iframe width="600" height="338" src="https://www.youtube-nocookie.com/embed/IxGVz3AjEe0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+					content += '<br><br><iframe width="600" height="338" src="https://www.youtube-nocookie.com/embed/' + video_id + '?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
 				$.alert({
 					columnClass: 'modal-wide',
 					title: false,

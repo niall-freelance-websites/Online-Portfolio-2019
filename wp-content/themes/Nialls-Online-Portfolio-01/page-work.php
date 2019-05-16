@@ -80,7 +80,7 @@
 										      echo $pageChild->post_excerpt;
 										    }
 										?></p></div>
-										<a class="readMore" href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">Read more</a>
+										<a class="readMore" href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">View project</a>
 									</div>
 
 								</div>

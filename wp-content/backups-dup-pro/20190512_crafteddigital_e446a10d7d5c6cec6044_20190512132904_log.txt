@@ -1,0 +1,66 @@
+********************************************************************************
+DUPLICATOR PRO PACKAGE-LOG: 2019-05-12 13:29:20
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	3.7.4
+WORDPRESS:	5.1.1
+PHP INFO:	7.0.0 | SAPI: apache2handler
+SERVER:		Apache/2.2.29 (Unix) mod_wsgi/3.5 Python/2.7.10 PHP/7.0.0 mod_ssl/2.2.29 OpenSSL/0.9.8zg DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.22.0 
+PHP TIME LIMIT: [7200] not allowed 
+PHP MAX MEMORY: 5000M (256M default) 
+RUN TYPE: Manual
+MEMORY STACK: 32MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP (query limit - 500)
+MYSQLDUMP:    Not Supported
+MYSQLTIMEOUT: 5000 
+TABLES: total:15 | filtered:0 | create:15 
+FILTERED: [] 
+SQL CREATED: 20190512_crafteddigital_e446a10d7d5c6cec6044_20190512132904_database.sql 
+SQL FILE SIZE: 2.13MB 
+SQL FILE TIME: 2019-05-12 13:29:20 
+SQL RUNTIME: 0.335 sec. 
+MEMORY STACK: 36MB 
+
+******************************************************************************** 
+ARCHIVE Type=DUP Mode=DupArchive 
+******************************************************************************** 
+ARCHIVE DIR:  /Users/niallmoran/Documents/GitHub/niall-freelance-websites/Online-Portfolio-2019 
+ARCHIVE FILE: 20190512_crafteddigital_e446a10d7d5c6cec6044_20190512132904_archive.daf 
+FILTERS: *OFF* 
+DIRS:  not set 
+EXTS:  not set 
+FILES:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	231.41MB 
+STATS:	Dirs 912 | Files 7,739 | Total 8,651 
+COMPRESSED SIZE: 183.17MB 
+ARCHIVE RUNTIME: 48.343 sec. 
+MEMORY STACK: 4MB 
+CREATE WARNINGS: No warnings. 
+VALIDATION WARNINGS: No warnings. 
+
+******************************************************************************** 
+STORAGE: 
+******************************************************************************** 
+LOCAL: Default, /Users/niallmoran/Documents/GitHub/niall-freelance-websites/Online-Portfolio-2019/wp-content/backups-dup-pro 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL FILE: 2.13MB 
+INSTALLER FILE: 44.04KB 
+ARCHIVE FILE: 183.17MB  
+EXPECTED FILE/DIRECTORY COUNT: 8,651 
+ACTUAL FILE/DIRECTORY COUNT: 8,651 
+
+********************************************************************************
+RECORD ID:[5]
+TOTAL PROCESS RUNTIME: 48.882 sec.
+PEAK PHP MEMORY USED: 6MB
+DONE PROCESSING => 20190512_crafteddigital 2019-05-12 13:30:09
+ 

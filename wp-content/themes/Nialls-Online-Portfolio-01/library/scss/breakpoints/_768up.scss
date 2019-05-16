@@ -25,15 +25,17 @@ body {}
 	}
 }
 
-/*.absolute-top-banner {
-	margin-top: -135px;
-}*/
+body.home{
+	.entry-content .banner{
+	    background-position: center center;
+	}
+}
 
 .entry-content .banner{
 	max-height: 520px;
 
 	.bannerContent {
-	    transform: translateY(-60%);
+	    transform: translateY(-50%);
 	}
 	h1{
     	font-size: 4.3em;
@@ -148,39 +150,73 @@ p.emailContact, p.phoneContact{
 	padding: 0 7%;
 }
 
+.strong-view.controls-style-buttons:not(.rtl) .wpmslider-next{
+	right: 10px;
+}
+
 
 /*********************
 Project Pages
 *********************/
 
 .page-template-page-projects{
-	.entry-content .banner {
-	    h1{
-	    	font-size: 1.8em;
-	    }
+	.entry-content{
+		padding-bottom: 60px;
 
-	    .bannerContent{
-            transform: translateY(0);
-        }
+		.banner {
+		    h1{
+		    	font-size: 1.8em;
+		    }
+
+		    .bannerContent{
+	            transform: translateY(0);
+	        }
+		}
 	}
 }
 
 .projectContainer{
 	.projectInfo{
-		width: 38%;
-		float: right;
+		/*width: 38%;*/
+		width: 100%;
+		max-width: 800px;
+		/*float: right;*/
 		display: inline-block;
-	    padding: 0 1.5em 0 2em;
-	    position: -webkit-sticky;
+	    /*padding: 0 1.5em 0 2em;*/
+	    /*position: -webkit-sticky;*/
         /*position: sticky;*/
         /*top: 30px;*/
         top: 130px;
 	}
 	img{
-		width: 62%;
+		/*width: 62%;*/
+		width: 100%;
 		/*float: left;*/
 		display: inline-block;
 	}
+
+	p{
+		max-width: 800px;
+	}
+}
+
+.scrollBoxContainer{
+
+	h1{
+		font-size: 1.8em;
+	}
+
+	p{
+	    font-size: 1em;
+	}
+}
+
+div.box2{
+	height: 600px;
+}
+
+.mainNav{
+	margin-top: -78px;
 }
 
 /*********************

@@ -135,18 +135,44 @@ jQuery(document).ready(function($) {
     //    $(".contact-btn" ).trigger("click");
     // })
 
-    $( "div.ProjectsNavigation" ).insertAfter( $( "p.viewWeb" ) );
+    // $( "div.ProjectsNavigation" ).insertAfter( $( "p.viewWeb" ) );
 
 
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+// $(window).scroll(function() {    
+//     var scroll = $(window).scrollTop();
 
-    if (scroll >= 1) {
-        $(".header").addClass("stickyHeader");
-    } else {
-        $(".header").removeClass("stickyHeader");
-    }
+//     if (scroll >= 1) {
+//         $(".header").addClass("stickyHeader");
+//     } else {
+//         $(".header").removeClass("stickyHeader");
+//     }
+// });
+
+
+jQuery('.scrollCircle').click(function(e){
+    var jump = $(this).attr('href');
+    var new_position = $(jump).offset();
+    $('html, body').stop().animate({ scrollTop: new_position.top }, 500);
+    e.preventDefault();
 });
+
+var background_image_parallax = function($object, multiplier){
+  multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.9;
+  multiplier = 1 - multiplier;
+  var $doc = $(document);
+  $object.css({"background-attatchment" : "fixed"});
+  $(window).scroll(function(){
+    var from_top = $doc.scrollTop(),
+        bg_css = '0px ' +(multiplier * from_top) + 'px';
+    $object.css({"background-position" : bg_css });
+  });
+};
+
+//Just pass the jQuery object
+background_image_parallax($(".box3"));
+
+//optional second value for speed
+background_image_parallax($(".box2"), 1.5);
 
 
     // $('#menu-item-389').bind( "click", function() {

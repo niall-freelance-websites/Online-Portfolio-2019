@@ -3,8 +3,8 @@ Contributors: machothemes,silkalns,cdillon27
 Tags: testimonials, testimonial slider, testimonial form, star ratings
 Requires at least: 4.6
 Requires PHP: 5.6
-Tested up to: 5.0
-Stable tag: 2.35
+Tested up to: 5.1
+Stable tag: 2.37
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -173,7 +173,7 @@ No. If you already have testimonials in another plugin or theme, you will have t
 
 == Changelog ==
 
-* See changelog.txt for previous versions.
+* See [changelog.txt](https://github.com/MachoThemes/strong-testimonials/blob/master/changelog.txt) for previous versions.
 
 == Upgrade Notice ==
 
